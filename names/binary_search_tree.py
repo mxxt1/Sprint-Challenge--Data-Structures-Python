@@ -55,3 +55,6 @@ class BSTNode:
             self.left.for_each(fn)
         if self.right:
             self.right.for_each(fn)
+
+
+

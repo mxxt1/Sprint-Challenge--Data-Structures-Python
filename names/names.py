@@ -19,6 +19,13 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+tree = BSTNode("A")
+for first in names_1:
+    tree.insert(first)
+for second in names_2:
+    if tree.contains(second):
+        duplicates.append(second)
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
