@@ -14,17 +14,28 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-# for name_1 in names_1:
-#     for name_2 in names_2:
-#         if name_1 == name_2:
-#             duplicates.append(name_1)
+# for name_1 in names_1: --> loop through first list O(n)
+#     for name_2 in names_2: --> loop through second list O(n)
+#         if name_1 == name_2: --> compare the two O(1)
+#             duplicates.append(name_1) --> append the duplicate to duplicates O(1)
 
+# NESTED FOR LOOP COMPLEXITY O(n*m)
+#O(n) * O(m) * O(1) * O(1)
+# Executes in .12168
+
+
+# create tree
 tree = BSTNode("A")
-for first in names_1:
+# loop and populate the tree with first list
+for first in names_1: # O(n)
     tree.insert(first)
-for second in names_2:
-    if tree.contains(second):
-        duplicates.append(second)
+# loop through the second list and see if name exists in tree
+for second in names_2: # O(m)
+# if it the name exists, append it to the duplicates list
+    if tree.contains(second): # O(1)
+        duplicates.append(second) # O(1)
+
+# O(n*m)*O(1)*O(1) = O(n*m)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
